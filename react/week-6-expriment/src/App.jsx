@@ -8,8 +8,10 @@ function App() {
   }
   return (
     <Fragment>
-      <button onClick={updateTitle}>Update the title</button>
+      <button onClick={updateTitle}> update the title</button>
       <Header title={title}></Header>
+      <Header title="Vishal"></Header>
+      <Header title="Vishal"></Header>
       <Header title="Vishal"></Header>
     </Fragment>
   );
