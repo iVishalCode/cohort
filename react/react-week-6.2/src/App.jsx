@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 function App() {
   const [todos, setTodos] = useState(0);
   useEffect(() => {
@@ -11,9 +12,9 @@ function App() {
   }, []);
   return (
     <>
-      (todos.map(todo=>
-      <Todo title={todos.title} descripation={todos.descripation} />
-      ))
+      {todos.map((todo) => (
+        <Todo title={todos.title} descripation={todos.descripation} />
+      ))}
     </>
   );
 }
