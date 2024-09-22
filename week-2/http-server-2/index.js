@@ -4,7 +4,7 @@ const app = express();
 
 const port = 3000;
 
-app.get("/route-handle", (req, res) => {
+app.post("/route-handle", (req, res) => {
   res.json({
     name: "Raju",
     age: 34,
