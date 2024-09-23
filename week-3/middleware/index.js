@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-
+/* without middleware
 app.get("/health-checkup", (req, res) => {
   const username = req.header.username;
   const password = req.header.password;
@@ -23,5 +23,18 @@ app.get("/health-checkup", (req, res) => {
     msg: "Your kidney is fine",
   });
 });
+*/
 
+app.get(
+  "/health-checkup",
+  (req, res, next) => {
+    console.log(" hi from req1");
+  },
+  (req, res, next) => {
+    console.log("hi from req2");
+  },
+  (req, res) => {
+    console.log("hi from req3");
+  }
+);
 app.listen(3000);
