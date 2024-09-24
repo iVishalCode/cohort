@@ -16,7 +16,7 @@ const ALL_USERS = [
     name: "vansh",
   },
   {
-    username: "ashish@gamil.com",
+    username: "ashish@gmail.com",
     password: "34222",
     name: "Ashish",
   },
@@ -56,3 +56,16 @@ app.post("/signin", (req, res) => {
     token,
   });
 });
+
+app.get("/users", (req, res) => {
+  const token = req.headers.authorization;
+
+  const decoded = jwt.verify(token, jwtPassword);
+  const username = decoded.username;
+
+  res.json({
+    users: ALL_USERS,
+  });
+});
+
+app.listen(3000);
