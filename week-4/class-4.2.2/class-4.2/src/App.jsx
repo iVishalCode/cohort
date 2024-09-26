@@ -9,7 +9,7 @@ function App() {
     <>
       <button
         onClick={() => {
-          setCount((count) => count + 1);
+          setCount(Math.random());
         }}
       >
         count is {count}
